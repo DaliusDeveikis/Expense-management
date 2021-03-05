@@ -1,0 +1,50 @@
+<!-- FROM base.html -->
+{% extends 'base.html' %}
+{% block title %}Update Expense{% endblock %}
+
+<!-- CONTENT -->
+
+{% block content %}
+
+    <p class="lead"></p>
+
+    <div class="col-sm-7 offset-1">
+        <h4 class="text-center alert alert-dark"> Expenses </h4>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Expenses type</th>
+                <th scope="col">Sum</th>
+                <th scope="col">Notes</th>
+                <th scope="col">Action</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ expenses.date|date:"n/d/o" }} {{ expenses.date|time:"H:i" }}</td>
+                <form action="" method="post">
+                    {% csrf_token %}
+
+                    <td>{{ form.type }}</td>
+                    <td>{{ form.sum }}</td>
+                    <td>{{ form.notes }}</td>
+
+                    <td>
+                        <div class="form-check form-check-inline">
+                            <input type="submit" class="btn btn-info btn-sm" value="Update">
+                            <br>
+                            <br>
+                            <a href="{% url 'home' %}" class="d-inline btn btn-dark btn-sm">Back</a>
+                        </div>
+                    </td>
+                </form>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+
+{% endblock %}
+
+<!-- END CONTENT -->

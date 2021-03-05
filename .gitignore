@@ -1,0 +1,6 @@
+*.pyc
+/.idea/
+/.pytest_cache/
+/.venv/
+/migrations
+/db.sqlite3
